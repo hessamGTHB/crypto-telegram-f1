@@ -1,0 +1,16 @@
+[Unit]
+Description=Crypto Price Telegram Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# مسیر پروژه را مطابق سرور خودتان تغییر دهید
+WorkingDirectory=/opt/crypto-channel-bot
+User=root
+Restart=always
+RestartSec=10
+ExecStart=/opt/crypto-channel-bot/venv/bin/python bot.py
+
+[Install]
+WantedBy=multi-user.target
